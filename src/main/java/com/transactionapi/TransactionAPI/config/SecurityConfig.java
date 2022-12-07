@@ -22,18 +22,7 @@ public class SecurityConfig {
         http.exceptionHandling().accessDeniedPage("/forbidden");
         http.authorizeRequests().antMatchers("/css/**", "/js/**").permitAll();
 
-//        http.formLogin()
-//                .loginProcessingUrl("/login")
-//                .usernameParameter("user_email")
-//                .passwordParameter("user_password")
-//                .defaultSuccessUrl("/")
-//                .failureUrl("/login?error=true")
-//                .loginPage("/login").permitAll();
-//
-//        http.logout()
-//                .logoutUrl("/logout")
-//                .logoutSuccessUrl("/login");
-
+        //To Allow external post requests
         http.csrf().disable();
 
         return http.build();
